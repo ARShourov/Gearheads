@@ -1,0 +1,1621 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* =========================
+   GLOBAL RESET & VARIABLES
+   ========================= */
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 50%;
+    overflow-x: hidden;
+}
+
+:root {
+    --main-color: #2288ff;
+    --second-color: #192f6a;
+    --text-color: #314862;
+    --bg-color: #fff;
+    --light-bg: #f6f9fd;
+    --border-color: #d8dee8;
+    --input-color: #8a8a8a;
+    --box-shadow: 2px 2px 1.125rem rgb(14 52 54 / 24%);
+    --transition: 0.3s ease;
+}
+
+body {
+    color: var(--text-color);
+    background: var(--bg-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+.btn,
+.dropbtn,
+.uprofile-container form .button,
+.login-container form .buttom {
+    cursor: pointer;
+}
+
+section {
+    padding: 4.5rem 0 3rem;
+}
+
+.container {
+    width: min(100% - 4rem, 156.25rem);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================
+   HEADER / NAVIGATION
+   ========================= */
+
+header {
+    display: block;
+    width: 100%;
+    background: var(--bg-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 0.2rem 1rem rgb(0 0 0 / 8%);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    min-height: 7rem;
+    padding: 1.25rem 2.1875rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.navbar a {
+    display: inline-block;
+    padding: 0.5rem 1.0625rem;
+    color: var(--text-color);
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 0.8rem;
+    transition: color var(--transition), background var(--transition);
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 2.8rem;
+    cursor: pointer;
+    display: none;
+    color: var(--text-color);
+}
+
+#menu {
+    display: none;
+}
+
+.btn {
+    display: inline-block;
+    width: fit-content;
+    padding: 0.75rem 1.5rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-size: 2rem;
+    border-radius: 5rem;
+    border: none;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.btn:hover,
+.btn:focus-visible {
+    background: #6fb0fa;
+    transform: translateY(-0.1rem);
+}
+
+/* =========================
+   HOME / HERO
+   ========================= */
+
+.home {
+    margin-top: 9rem;
+    background: linear-gradient(rgb(0 0 0 / 28%), rgb(0 0 0 / 28%)),
+        url(images/car-being-taking-care-workshop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 62.5rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.home-text {
+    width: min(100%, 75rem);
+    padding: 0 6.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.home-text h1 {
+    color: var(--bg-color);
+    font-size: clamp(3rem, 4vw, 5.5rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.home-text h5 {
+    color: var(--bg-color);
+    font-size: clamp(1.6rem, 1.8vw, 2.4rem);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 70rem;
+}
+
+.dropdown {
+    position: relative;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 1.5rem 0 0;
+}
+
+/* Works whether .dropdown is inside .home-text or directly inside .home. */
+.home-text > .dropdown {
+    margin-left: 0;
+}
+
+.home > .dropdown {
+    margin-left: 6.25rem;
+}
+
+.dropbtn {
+    display: inline-block;
+    max-width: 100%;
+    background: var(--main-color);
+    color: var(--bg-color);
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    border-radius: 0.8rem;
+    border: none;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.dropbtn:hover,
+.dropbtn:focus-visible {
+    background: #6fb0fa;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    background: var(--bg-color);
+    min-width: 18rem;
+    z-index: 10;
+    border-radius: 0.8rem;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 0.9rem 1.4rem;
+    text-align: center;
+    font-weight: 700;
+    display: block;
+    transition: background var(--transition), color var(--transition);
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus-visible {
+    background: #c4c3c3;
+    color: var(--text-color);
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+/* =========================
+   ABOUT
+   ========================= */
+
+.about {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 3rem 4rem 3rem 3rem;
+    object-fit: cover;
+}
+
+.about-text span {
+    display: block;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.about-text h1 {
+    font-size: 2.8rem;
+    line-height: 1.3;
+    margin: 0.5rem 0 1rem;
+}
+
+.about-text p {
+    font-size: 2rem;
+    margin: 0.9rem 0;
+}
+
+/* =========================
+   SERVICES
+   ========================= */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.services .box {
+    padding: 2.5rem;
+    background: var(--bg-color);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    border-radius: 3rem;
+    transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.services .box:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    transform: translateY(-0.5rem);
+}
+
+.services .box .bx {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 10rem;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    background: var(--bg-color);
+    color: var(--main-color);
+    font-size: 5.5rem;
+    line-height: 1;
+    transition: transform var(--transition), font-size var(--transition);
+}
+
+.services .box h3 {
+    font-size: 2.5rem;
+    margin: 1rem 0 0.8rem;
+}
+
+.services .box p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+}
+
+/* =========================
+   SECTION HEADINGS
+   ========================= */
+
+.heading {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.heading span {
+    display: block;
+    font-weight: 700;
+    color: var(--main-color);
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+}
+
+.heading h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.heading p {
+    font-size: 1.5rem;
+    margin-top: 0.75rem;
+}
+
+/* =========================
+   PROPERTIES
+   ========================= */
+
+.properties {
+    background: var(--bg-color);
+    border-radius: 2rem;
+}
+
+.properties-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 3rem;
+    padding: 0 3.125rem;
+}
+
+.properties-container .box {
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.properties-container .box:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0 1.2rem 3rem rgb(14 52 54 / 18%);
+}
+
+.properties-container .box img {
+    border-radius: 1rem;
+    width: 100%;
+    height: 31.25rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.properties-container .box h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    float: none;
+}
+
+.properties-container .box .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.properties-container .box .content .text {
+    min-width: 0;
+}
+
+.properties-container .box .content .text h3 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.properties-container .box .content .text p {
+    font-size: 1.3rem;
+}
+
+.properties-container .box .content .icon {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    flex-shrink: 0;
+}
+
+.properties-container .box .content .icon .fa-solid {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.properties-container .box .content .icon span {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-left: 0.25rem;
+}
+
+/* =========================
+   NEWSLETTER
+   ========================= */
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    justify-content: center;
+    text-align: center;
+}
+
+.newsletter h2 {
+    font-size: 3rem;
+    padding: 3rem;
+}
+
+.newsletter p {
+    width: 100%;
+    margin: 1rem auto 0;
+    text-align: center;
+}
+
+.newsletter form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 70rem);
+    margin: 0 auto;
+    background: var(--bg-color);
+    box-shadow: var(--box-shadow);
+    padding: 0.6rem;
+    border-radius: 5rem;
+}
+
+.newsletter form input {
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    background: transparent;
+    text-align: center;
+}
+
+.newsletter #email-box {
+    width: 100%;
+    min-width: 0;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.newsletter .btn {
+    flex-shrink: 0;
+    padding: 0.75rem 2.125rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+    background: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 5rem 0 0 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 4rem;
+}
+
+.footer-container h1 {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.footer-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-box h3 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.footer-box a {
+    font-size: 2rem;
+    color: var(--bg-color);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    transition: color var(--transition);
+}
+
+.footer-box a:hover,
+.footer-box a:focus-visible {
+    color: var(--text-color);
+}
+
+.social a {
+    display: inline-block;
+    font-size: 3rem;
+    margin-right: 1rem;
+    color: var(--bg-color);
+    transition: transform var(--transition), color var(--transition);
+}
+
+.social a:hover,
+.social a:focus-visible {
+    transform: translateY(-0.2rem);
+    color: var(--text-color);
+}
+
+.copyright {
+    padding: 1.25rem;
+    text-align: center;
+    color: var(--bg-color);
+    background: var(--main-color);
+}
+
+/* =========================
+   LOGIN
+   ========================= */
+
+.login {
+    display: grid;
+    grid-template-columns: minmax(28rem, 0.6fr) minmax(32rem, 1fr);
+    align-items: center;
+    gap: 5rem;
+    min-height: 100vh;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 100%;
+    max-width: 65rem;
+    margin: 0 auto;
+}
+
+.login-container h2 {
+    font-size: 4rem;
+    line-height: 1.2;
+}
+
+.login-container p {
+    font-size: 2rem;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container form span {
+    font-size: 2rem;
+    color: var(--input-color);
+    margin-bottom: 0.25rem;
+}
+
+.login-container form input {
+    border: 0.2rem solid var(--input-color);
+    border-radius: 0.6rem;
+    outline: none;
+    padding: 1.4rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+    width: 100%;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.login-container form input:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 0.25rem rgb(34 136 255 / 14%);
+}
+
+.login-container form .buttom {
+    outline: none;
+    border: none;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1.4rem;
+    border-radius: 0.6rem;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.login-container form .buttom:hover,
+.login-container form .buttom:focus-visible {
+    background: #3492fd;
+    transform: translateY(-0.1rem);
+}
+
+.login-container form a {
+    font-size: 1.5rem;
+    text-align: right;
+    margin-top: 0.5rem;
+    color: var(--main-color);
+}
+
+.login-container .btn {
+    border-radius: 0.6rem;
+    padding: 1.4rem;
+    text-align: center;
+}
+
+/* =========================
+   UPDATE PROFILE
+   ========================= */
+
+.uprofile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 11rem 2rem 5rem;
+    background: var(--bg-color);
+}
+
+.uprofile-container {
+    background: var(--bg-color);
+    padding: 5rem;
+    border-radius: 1.875rem;
+    box-shadow: var(--box-shadow);
+    max-width: 68.75rem;
+    width: 100%;
+}
+
+.uprofile-container h2 {
+    text-align: center;
+    margin-bottom: 3.5rem;
+    font-size: 3rem;
+}
+
+.uprofile-container span {
+    font-size: 2rem;
+    color: black;
+    display: block;
+    margin: 0.625rem 0 0.3125rem;
+    font-weight: bold;
+}
+
+.uprofile-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.uprofile-container form input {
+    border: 0.2rem solid var(--input-color);
+    outline: none;
+    padding: 1.4rem;
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+    background: var(--bg-color);
+    width: 100%;
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.uprofile-container form input:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 0.25rem rgb(34 136 255 / 14%);
+}
+
+.uprofile-container form .button {
+    background: var(--main-color);
+    color: var(--bg-color);
+    padding: 1.375rem 1.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    transition: background var(--transition), transform var(--transition);
+}
+
+.uprofile-container form .button:hover,
+.uprofile-container form .button:focus-visible {
+    background: #86caff;
+    transform: translateY(-0.1rem);
+}
+
+/* =========================
+   PROFILE
+   ========================= */
+
+.profile {
+    text-align: center;
+    margin-top: 3.125rem;
+    margin-bottom: 1.25rem;
+}
+
+.profile.container {
+    background: var(--bg-color);
+    border-radius: 1.875rem;
+    box-shadow: var(--box-shadow);
+    width: min(56.25rem, 100%);
+    min-height: 50rem;
+    height: auto;
+    margin: 12rem auto 5rem;
+    padding: 3rem;
+    text-align: center;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 25rem;
+    height: 25rem;
+    max-width: 75%;
+    object-fit: cover;
+    margin: 0 auto 1.25rem;
+    box-shadow: var(--box-shadow);
+}
+
+.profile-container {
+    margin-bottom: 1.25rem;
+}
+
+.profile-container .profile-info {
+    display: inline-block;
+}
+
+.profile-container .profile-info p {
+    font-size: 2rem;
+    margin: 0.625rem 0;
+}
+
+.profile-container p {
+    margin: 0.625rem 0;
+    font-size: 2rem;
+}
+
+.btn.update-btn,
+.btn.back-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 0.9375rem;
+    margin: 0.625rem 0;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.update-btn {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+.update-btn:hover,
+.update-btn:focus-visible {
+    background: #86caff;
+}
+
+.back-btn {
+    background: var(--main-color);
+    color: var(--bg-color);
+}
+
+.back-btn:hover,
+.back-btn:focus-visible {
+    background: #86caff;
+}
+
+/* =========================
+   PROFILE CARDS / HOME PAGE
+   ========================= */
+
+.area-container h1 {
+    padding-top: 12.5rem;
+    margin: 0.625rem 0;
+    font-size: 4rem;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--main-color);
+    font-weight: 1000;
+}
+
+.area-container p {
+    padding-top: 1px;
+    color: var(--text-color);
+    text-align: center;
+    font-size: 2rem;
+    text-decoration-color: var(--second-color);
+}
+
+.profile-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 6.25rem;
+}
+
+.profile-card {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 3.125rem;
+    padding: 3rem;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    height: 100%;
+    margin: 0;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.profile-card:hover {
+    background: var(--main-color);
+    box-shadow: var(--box-shadow);
+    transform: translateY(-0.5rem) scale(1.01);
+}
+
+.profile-card:hover h2,
+.profile-card:hover p {
+    color: var(--bg-color);
+}
+
+.profile-card img {
+    border-radius: 50%;
+    width: 18.75rem;
+    height: 18.75rem;
+    max-width: 75%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.profile-card h2 {
+    margin: 1rem 0 2rem;
+    font-size: 3rem;
+}
+
+.profile-card p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
+    text-align: left;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+.profile-card .contact-info {
+    margin-top: auto;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.profile-card .contact-info a {
+    display: inline-block;
+    padding: 1.25rem 2.5rem;
+    color: var(--bg-color);
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color var(--transition), color var(--transition), transform var(--transition);
+}
+
+.profile-card .contact-info a:hover,
+.profile-card .contact-info a:focus-visible {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transform: translateY(-0.1rem);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 1200px) {
+    .container {
+        width: min(100% - 3rem, 156.25rem);
+    }
+
+    .nav {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .home-text {
+        padding: 5rem;
+    }
+
+    .properties-container {
+        padding: 0 1rem;
+    }
+}
+
+/* SERVICES RESPONSIVE GRID */
+@media (max-width: 1080px) {
+    .services {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1080px) {
+    section {
+        padding: 4rem 0 3rem;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about-img {
+        order: 1;
+    }
+
+    .about-text {
+        order: 2;
+    }
+
+    .login {
+        grid-template-columns: 1fr;
+        padding-top: 10rem;
+    }
+
+    .login-container {
+        max-width: 75rem;
+    }
+
+    .footer-container {
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 880px) {
+    .properties-container {
+        grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5rem;
+    }
+
+    .profile-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .profile-card {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 800px) {
+    html {
+        scroll-padding-top: 6rem;
+    }
+
+    .container {
+        width: min(100% - 2rem, 156.25rem);
+    }
+
+    .nav {
+        min-height: 6rem;
+        padding: 0.625rem 0;
+    }
+
+    #menu-icon {
+        display: initial;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--second-color);
+        text-align: center;
+        clip-path: circle(0% at 100% 1%);
+        transition: clip-path 0.6s ease;
+        box-shadow: 0 0.8rem 1.5rem rgb(0 0 0 / 12%);
+    }
+
+    .navbar a {
+        display: block;
+        margin: 0.5rem 1rem;
+        padding: 1.25rem;
+        color: var(--bg-color);
+    }
+
+    .navbar a:hover,
+    .navbar a:focus-visible {
+        background: var(--main-color);
+        color: var(--bg-color);
+        transition: 0.2s;
+    }
+
+    #menu:checked ~ .navbar {
+        clip-path: circle(144% at 100% 1%);
+    }
+
+    .home {
+        margin-top: 7rem;
+        min-height: 52rem;
+        border-radius: 1.5rem;
+        justify-content: center;
+    }
+
+    .home-text {
+        padding: 0 2rem;
+        width: 100%;
+    }
+
+    .home > .dropdown {
+        width: calc(100% - 4rem);
+        margin-left: 2rem;
+    }
+
+    .home-text > .dropdown {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .home-text h5 {
+        max-width: 100%;
+    }
+
+    .dropdown,
+    .dropbtn {
+        max-width: 100%;
+    }
+
+    .dropbtn {
+        white-space: normal;
+    }
+
+    .home-text h1 {
+        font-size: clamp(3rem, 7vw, 4.5rem);
+    }
+
+    .home-text h5 {
+        font-size: 1.8rem;
+    }
+
+    .about-text span {
+        font-size: 3.6rem;
+    }
+
+    .about-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .newsletter h2 {
+        padding: 2rem 0;
+    }
+
+    .newsletter form {
+        width: min(100%, 60rem);
+    }
+
+    .uprofile {
+        padding-top: 9rem;
+    }
+
+    .uprofile-container {
+        padding: 3rem;
+    }
+
+    .profile.container {
+        width: min(100%, 56.25rem);
+        margin-top: 9rem;
+        padding: 2.5rem;
+    }
+
+    .area-container h1 {
+        padding-top: 8rem;
+        font-size: 3.2rem;
+    }
+
+    .profile-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 4rem;
+    }
+
+    .profile-card {
+        max-width: none;
+    }
+}
+
+
+@media (max-width: 800px) {
+    .services .box .bx {
+        width: 8rem;
+        height: 8rem;
+        font-size: 4.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo {
+        font-size: 2.3rem;
+    }
+
+    section {
+        padding: 3.5rem 0 2.5rem;
+    }
+
+    .home {
+        min-height: 48rem;
+    }
+
+    .home-text {
+        padding: 0 2rem;
+    }
+
+    .about-text span {
+        font-size: 3rem;
+    }
+
+    .about-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-text p,
+    .services .box p,
+    .area-container p {
+        font-size: 1.5rem;
+    }
+
+    .heading span {
+        font-size: 3.6rem;
+    }
+
+    .newsletter p {
+        text-align: center;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .properties-container {
+        grid-template-columns: 1fr;
+    }
+
+    .properties-container .box img {
+        height: 24rem;
+    }
+
+    .properties-container .box .content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .newsletter form {
+        width: 100%;
+        border-radius: 1.5rem;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        gap: 0.8rem;
+        padding: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .newsletter #email-box {
+        width: 100%;
+        min-height: 4.5rem;
+    }
+
+    .newsletter #email-box {
+        text-align: center;
+    }
+
+    .newsletter .btn {
+        width: 100%;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-container h1 {
+        font-size: 4rem;
+    }
+
+    .footer-box h3 {
+        font-size: 2.5rem;
+    }
+
+    .footer-box a {
+        font-size: 1.7rem;
+    }
+
+    .login-container h2 {
+        font-size: 3.2rem;
+    }
+
+    .login-container p,
+    .login-container form span,
+    .login-container form input,
+    .login-container form .buttom {
+        font-size: 1.7rem;
+    }
+
+    .uprofile-container {
+        padding: 2rem;
+        border-radius: 1.25rem;
+    }
+
+    .uprofile-container h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .uprofile-container span,
+    .uprofile-container form input {
+        font-size: 1.7rem;
+    }
+
+    .profile.container {
+        min-height: 0;
+        margin-bottom: 3rem;
+        padding: 2rem;
+    }
+
+    .profile-pic {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .profile-container .profile-info p,
+    .profile-container p {
+        font-size: 1.7rem;
+    }
+
+    .profile-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        padding: 2rem;
+        border-radius: 2rem;
+    }
+
+    .profile-card img {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .profile-card h2 {
+        font-size: 2.5rem;
+    }
+
+    .profile-card p {
+        font-size: 1.5rem;
+    }
+
+    .profile-card .contact-info a {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: min(100% - 1.5rem, 156.25rem);
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .home-text {
+        padding: 0 1.5rem;
+    }
+
+    .home > .dropdown {
+        width: calc(100% - 3rem);
+        margin-left: 1.5rem;
+    }
+
+    .about-text span {
+        font-size: 2.7rem;
+    }
+
+    .about-text h1 {
+        font-size: 2rem;
+    }
+
+    .heading span {
+        font-size: 3.2rem;
+    }
+
+    .home-text h1 {
+        font-size: 3rem;
+    }
+
+    .home-text h5 {
+        font-size: 1.5rem;
+    }
+
+    .dropbtn {
+        width: 100%;
+        max-width: 100%;
+        font-size: 1.5rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .dropdown {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .profile.container {
+        padding: 1.5rem;
+    }
+}
+
+/* =========================================================
+   EXTRA LARGE SERVICE ICONS
+   Keep the existing selector names and force the service
+   icons to be visibly large on every screen size.
+   ========================================================= */
+.services .box i,
+.services .box .bx,
+.services .box .fa,
+.services .box .fa-solid,
+.services .box .fa-regular,
+.services .box .fa-brands {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 16rem !important;
+    height: 16rem !important;
+    min-width: 16rem !important;
+    min-height: 16rem !important;
+    margin: 0 auto 2rem !important;
+    padding: 1.5rem !important;
+    border-radius: 50% !important;
+    background: var(--bg-color) !important;
+    color: var(--main-color) !important;
+    font-size: 10rem !important;
+    line-height: 1 !important;
+    flex-shrink: 0 !important;
+}
+
+/* Make sure a service icon represented by an image is also large. */
+.services .box > img,
+.services .box > a > img {
+    display: block !important;
+    width: 16rem !important;
+    height: 16rem !important;
+    max-width: 16rem !important;
+    margin: 0 auto 2rem !important;
+    object-fit: contain !important;
+}
+
+@media (max-width: 800px) {
+    .services .box i,
+    .services .box .bx,
+    .services .box .fa,
+    .services .box .fa-solid,
+    .services .box .fa-regular,
+    .services .box .fa-brands {
+        width: 13rem !important;
+        height: 13rem !important;
+        min-width: 13rem !important;
+        min-height: 13rem !important;
+        font-size: 8rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .services .box > img,
+    .services .box > a > img {
+        width: 13rem !important;
+        height: 13rem !important;
+        max-width: 13rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .services .box i,
+    .services .box .bx,
+    .services .box .fa,
+    .services .box .fa-solid,
+    .services .box .fa-regular,
+    .services .box .fa-brands {
+        width: 11rem !important;
+        height: 11rem !important;
+        min-width: 11rem !important;
+        min-height: 11rem !important;
+        font-size: 6.5rem !important;
+    }
+
+    .services .box > img,
+    .services .box > a > img {
+        width: 11rem !important;
+        height: 11rem !important;
+        max-width: 11rem !important;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .services {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   BEST SELLER / RECENT PROFILE CARDS
+   3 cards per row on desktop:
+   1-2-3 = row 1
+   4-5-6 = row 2
+   7-8-9 = row 3
+   ========================================================= */
+.profile-cards {
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-auto-flow: row !important;
+    gap: 2.5rem !important;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.profile-card {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+}
+
+/* Tablet: 2 cards per row */
+@media (max-width: 900px) and (min-width: 601px) {
+    .profile-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+/* Phone: 1 card per row */
+@media (max-width: 600px) {
+    .profile-cards {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* =========================================================
+   BEST SELLER / RECENT SERVICE PROVIDERS
+   The HTML uses .properties-container for these cards.
+   Desktop: 3 cards per row.
+   Tablet: 2 cards per row.
+   Mobile: 1 card per row.
+   ========================================================= */
+
+.properties-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 3rem !important;
+    width: 100% !important;
+}
+
+.properties-container > .box {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+}
+
+@media (max-width: 1080px) {
+    .properties-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .properties-container {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* =========================================================
+   NEWSLETTER SEND BUTTON - ALWAYS VISIBLE
+   The HTML uses: <input type="submit" class="btn">
+   ========================================================= */
+
+.newsletter .btn {
+    display: inline-block !important;
+    width: auto !important;
+    min-width: 10rem;
+    padding: 1.2rem 2.5rem !important;
+    margin: 0 !important;
+    background: #005eff !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 5rem !important;
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    opacity: 1 !important;
+    visibility: visible !important;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Keep exactly the same colour on hover, focus and active states. */
+.newsletter .btn:hover,
+.newsletter .btn:focus,
+.newsletter .btn:focus-visible,
+.newsletter .btn:active {
+    background: #99d3ff !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(-0.1rem);
+}
+
+/* Mobile newsletter layout */
+@media (max-width: 600px) {
+    .newsletter .btn {
+        width: 100% !important;
+        min-width: 0;
+    }
+}
